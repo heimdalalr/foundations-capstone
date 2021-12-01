@@ -1,0 +1,35 @@
+<!doctype html>
+<title>Capstone Project</title>
+<link rel="stylesheet" href="index.css">
+<body>
+  <header>Header</header>
+  <div id="main">
+    <article><!-- < --! presuggested-->
+    Friend suggested series
+    <button class="myButton" id="reccButton" label="click for series recommended by a friend">A friend's suggestion</button>
+
+    <form>
+      <input type='text' id='seriesTitle' placeholder="Series Name"/>
+      <input type='text' id='season'/>
+      <input type='text' id='currentEpisode'/>
+      <input type='text' id='totalEpisodes'/>
+    </form>
+  <br>
+<br>
+
+<section id="series-container"></section>
+</article>
+<nav>Nav</nav>
+<aside>Aside</aside>
+</div>
+<footer>Footer</footer>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("recButton").onclick = rec () {
+        axios.get("http://localhost:7777/api/recommended")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            })}</script>   
+</body>
+</html>

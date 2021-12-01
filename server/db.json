@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "seriesTitle": "Squid Game",
+        "season": 1,
+        "currentEpisode": 9,
+        "totalEpisodes": 10
+    },
+    {
+        "id": 2,
+        "seriesTitle": "YOU",
+        "season": 3,
+        "currentEpisode": 7,
+        "totalEpisodes": 10
+    },
+    {
+        "id": 3,
+        "seriesTitle": "Tiger King",
+        "season": 1,
+        "currentEpisode": 2,
+        "totalEpisodes": 5
+    },
+    {
+    "id": 4,
+        "seriesTitle": "Narcos: Mexico",
+        "season": 1,
+        "currentEpisode": 1,
+        "totalEpisodes": 10
+    },
+    {
+        "id": 5,
+        "seriesTitle": "Maid",
+        "season": 1,
+        "currentEpisode": 9,
+        "totalEpisodes": 10
+    }
+]
