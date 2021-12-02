@@ -1,14 +1,14 @@
 const seriesContainer = document.querySelector('#series-container')
 const form = document.querySelector('form')
 
-const baseURL = `http://localhost:7777/api/series`
+const baseURL = `http://localhost:7777/api/series/`
 
 const seriesCallback = ({data: series }) => displaySeries(series)
 const errCallback = err => console.log(err)
 
 const getAllSeries = () => axios.get(baseURL).then(seriesCallback).catch(errCallback)
 const createSeries = body => axios.post(baseURL, body).then(seriesCallback).catch(errCallback)
-const updateSeries = (id, type) => axios.put(`${baseURL}/{id}`, {type}).then(houseCallback).catch(errCallback)
+const updateSeries = ($id, type) => axios.put(`${baseURL}/{id}`, {type}).then(houseCallback).catch(errCallback)
 
 function submitHandler(e){
     e.preventDefault()
@@ -65,17 +65,34 @@ function displaySeries(arr) {
 function updateEpisode(event) {
     console.log("Current episode number: ", event.target['data-episode']);
     let targetID = parseInt(event.target.id);
+    console.log(targetID)
     axios.post(`${baseURL}`, 
     { 
         currentEpisode: (parseInt(event.target['data-episode']) + 1), 
         currentID: targetID
     })
-    .then(response => displayUpdatedSeries(response))
+    .then(response => displaySeries(response.data))
     .catch(error => console.log(error.response.data))
 }
 
 function displayUpdatedSeries(arr) {
-const
+    seriesContainer.innerHTML = ``
+    for (let i=0; i<arr.length; i++) {
+        let series = arr[i]
+        const seriesCard = document.createElement('div')
+        seriesCard.classList.add('series-card')
+        console.log(series)
+        seriesCard.innerHTML = `(${series.id}) Title: ${series.seriesTitle} - Season: ${series.season} - Episode ${series.currentEpisode} of ${series.totalEpisodes}`
+        let updateEpisodeButton = document.createElement('button')
+        updateEpisodeButton.innerHTML = '+'
+        updateEpisodeButton.id = series.id;
+        updateEpisodeButton['data-episode'] =`${series.currentEpisode}`
+        seriesCard.appendChild(updateEpisodeButton)
+
+        updateEpisodeButton.addEventListener("click", updateEpisode)
+
+        seriesContainer.appendChild(seriesCard)
+    }
 }
 
 form.addEventListener('submit', submitHandler)

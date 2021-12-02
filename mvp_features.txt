@@ -1,0 +1,11 @@
+Foundations Capstone - Shows I'll Never finish
+
+The general summary of my foundations capstone project is a site that holds a list of shows
+That I haven't finished for many reasons but the main one being that bootcamp has drained all
+My free time.
+
+The first feature is a random draw of shows that were suggested to me by friends and family. A better way to keep track recommendations than to write them down somewhere and lose the paper that they are on. It's also a good thing to go to when your food is hot and ready and you need something to watch alongside your meal.
+
+The next feature is a list that propagates upon the loading of the page and allows you to see shows that already have a bit of progress on them. The shows are not in any particular order because they can not be controlled by my whims. It just shows the facts.
+
+The last feature is that the list can be updated, by pushing the button on the right side of the series you can tell the server to increment the current episode and propogate the list to show that you have indeed managed to finish something. Small accomplishments are known to enhance dopamine, so coding it to work and actually pushing it increases mood.
