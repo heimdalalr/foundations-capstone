@@ -4,9 +4,8 @@
 <body>
   <header>Header</header>
   <div id="main">
-    <article><!-- < --! presuggested-->
     Friend suggested series
-    <button class="myButton" id="reccButton" label="click for series recommended by a friend">A friend's suggestion</button>
+    <button class="myButton" id="recButton" label="click for series recommended by a friend">A friend's suggestion</button>
 
     <form>
       <input type='text' id='seriesTitle' placeholder="Series Name"/>
@@ -17,19 +16,31 @@
   <br>
 <br>
 
-<section id="series-container"></section>
-</article>
+
+  <section id="series-container">
+    
+  </section>
+
+
 <nav>Nav</nav>
 <aside>Aside</aside>
 </div>
 <footer>Footer</footer>
  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script>
+   document.onload = function() {
+     axios.get("http://localhost:7777/api/series")
+         .then(function (response) {
+           const data = response.data;
+           console.log(`this is working`, data);
+         })}</script> 
     <script>
-      document.getElementById("recButton").onclick = rec () {
+      document.getElementById("recButton").onclick = function() {
         axios.get("http://localhost:7777/api/recommended")
             .then(function (response) {
               const data = response.data;
-              alert(data);
-            })}</script>   
+              alert(`Here is your movie suggestion: ${data}`);
+            })}</script>
+  <script src="main.js"></script>
 </body>
 </html>

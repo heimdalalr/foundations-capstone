@@ -52,22 +52,22 @@ module.exports = {
 
 
 //Friend's reccomendended shows
-app.get("api/recommended", (req, res) => {
+// app.get("api/recommended", (req, res) => {
 
-    const friendRecc = [
-        "Show 1",
-        "Show 2",
-        "Show 3",
-        "Show 4",
-        "Show 5"
-    ];
+//     const friendRecc = [
+//         "Show 1",
+//         "Show 2",
+//         "Show 3",
+//         "Show 4",
+//         "Show 5"
+//     ];
 
-    //choose random friend req
-    let randomIndex = Math.floor(Math.random() * friendRecc.length);
-    let randomFriendRecc = friendRecc[randomIndex];
+//     //choose random friend req
+//     let randomIndex = Math.floor(Math.random() * friendRecc.length);
+//     let randomFriendRecc = friendRecc[randomIndex];
 
-    res.status(200).send(randomFriendRecc);
-});
+//     res.status(200).send(randomFriendRecc);
+// });
 
 // personal list of shows in progress
 // app.get("api/progress", (req,res) => {

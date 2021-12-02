@@ -25,7 +25,7 @@ function submitHandler(e){
         totalEpisodes: totalEpisodes.value
     }
 
-    createSeries(bodyObj)
+    //createSeriesCard(bodyObj)
 
     seriesTitle.value = ''
     season.value =''
@@ -33,7 +33,7 @@ function submitHandler(e){
     totalEpisodes.value =''
 }
 
-function createSeries(series) {
+function createSeriesCard(series) {
     const seriesCard = document.createElement('div')
     seriesCard.classList.add('series-card')
 
@@ -45,10 +45,42 @@ function createSeries(series) {
 function displaySeries(arr) {
     seriesContainer.innerHTML = ``
     for (let i=0; i<arr.length; i++) {
-        createSeriesCard(arr[i])
+        let series = arr[i]
+        const seriesCard = document.createElement('div')
+        seriesCard.classList.add('series-card')
+        console.log(series)
+        seriesCard.innerHTML = `(${series.id}) Title: ${series.seriesTitle} - Season: ${series.season} - Episode ${series.currentEpisode} of ${series.totalEpisodes}`
+        let updateEpisodeButton = document.createElement('button')
+        updateEpisodeButton.innerHTML = '+'
+        updateEpisodeButton.id = series.id;
+        updateEpisodeButton['data-episode'] =`${series.currentEpisode}`
+        seriesCard.appendChild(updateEpisodeButton)
+
+        updateEpisodeButton.addEventListener("click", updateEpisode)
+
+        seriesContainer.appendChild(seriesCard)
     }
 }
 
-form.addEventListener('submit'.submitHandler)
+function updateEpisode(event) {
+    console.log("Current episode number: ", event.target['data-episode']);
+    let targetID = parseInt(event.target.id);
+    axios.post(`${baseURL}`, 
+    { 
+        currentEpisode: (parseInt(event.target['data-episode']) + 1), 
+        currentID: targetID
+    })
+    .then(response => displayUpdatedSeries(response))
+    .catch(error => console.log(error.response.data))
+}
+
+function displayUpdatedSeries(arr) {
+const
+}
+
+form.addEventListener('submit', submitHandler)
 
 getAllSeries()
+
+
+// 3 - Update current episode of the series/movie currently watching
