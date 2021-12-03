@@ -1,31 +1,115 @@
-<title>Capstone Project</title>
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
 <link rel="stylesheet" href="index.css">
-<body>
-  <header>Header</header>
-  <div id="main">
-    <div id="suggestion"></div>Friend suggested series
-    <button class="button1" id="recButton" label="click for series recommended by a friend">A friend's suggestion</button></div>div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <form>
-      <input type='text' id='seriesTitle' placeholder="Series Name"/>
-      <input type='text' id='season'/>
-      <input type='text' id='currentEpisode'/>
-      <input type='text' id='totalEpisodes'/>
-    </form>
-  <br>
-<br>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+<title>Foundations Capstone - Shows I'll Never Finish</title>
+</head>
+<body width="100%" height="100%" bgcolor="#e0e0e0" style="margin: 0;" yahoo="yahoo">
+<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#e0e0e0" style="border-collapse:collapse;">
+  <tr>
+    <td><center style="width: 100%;">
+        
+        
+        <div style="max-width: 600px;"> 
+          
 
-  <section id="series-container">
+          <header><table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
+            <tr>
+				<td style="padding: 20px 0; text-align: right"><h1><font face ="georgia">Shows I'll never finish</font></h1></td>
+            </tr>
+			</table></header>
+
+          
+          <main>
+          <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#ffffff" width="100%" style="max-width: 600px;">
+            
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+              <td class="full-width-image" align="center" ><img src="images/rollie.jpg" width="600" alt="a really judgey frenchie" border="0" style="width: 100%; max-width: 600px; height: auto;"></td>
+            </tr>
+            <!-- Hero Image, Flush : END --> 
+            
+            <article>
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td><h3>Friend's Reccomendations</h3> I've got some time so its time to watch a show! I don't want to dwell on it too long cause my food is getting cold. <br>
+                      <br>
+                      
+                      <!-- Button : Begin -->
+                      
+                      <table cellspacing="0" cellpadding="0" border="0" align="center" style="margin: auto;">
+                        <tr>
+                          <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td">
+                            
+                            <button class="button1" id="recButton"> 
+
+                            Grab a Quick Reccomendation
+                          </button></a></td>
+                        </tr>
+                      </table>
+                      
+                      <!-- Button : END --> 
+                      <br>
+                      This list includes shows that are top ranking in my area. Also the shows my friends said I'd like and keep asking if I've started it. There are probably other shows that I wrote down somewhere and never made it to this digital list. <hr></td>
+                  </tr>
+                </table></td>
+            </tr>
+            </article> 
+			  <!--list of series in progress : BEGIN-->
+			  <article>
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr>
+                    <td style="padding: 20px; font-family: sans-serif; font-size: 15px;  line-height: 20px; color: #555555;"> <h3>Watch List</h3>Here are some series I've started even if its just one episode. I can track and share my progress <br>
+                      
+                      
+                      <!-- Series List : Begin -->
+                      <section id="series-container">
     
-  </section>
-
-
-<nav>Nav</nav>
-<aside>Aside</aside>
-</div>
-<footer>Footer</footer>
- <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                    </section>
+                     
+                      <!-- Series List : END --> 
+                      <br>
+                      Even a little progress is a step forward! Gotta press the + to increment! <div></div><hr> <p>Follow my socials! Let's be friends!<br><img alt="social media image" align="center" src="images/socials.png" width="400px"><br>However your reccomendations may land on this page...</p>
+					  </td>
+                  </tr>
+                </table></td>
+            </tr>
+            </article> 
+			  <!--list of series in progress : END-->
+            
+            
+            
+          </table>
+          </main> 
+          
+          <footer>
+          <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+            <tr>
+              <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif;  line-height:18px; text-align: center; color: #888888;">
+                <br>
+                <br>
+                <span>2021 Foundations Capstone Project</span> <br>
+                <br>
+				</td></tr>
+			  </table></footer>
+           
+        </div>
+      </td>
+  </tr>
+</table><p><form>
+  <input type='text' id='seriesTitle' placeholder="Series Name"/>
+  <input type='text' id='season'/>
+  <input type='text' id='currentEpisode'/>
+  <input type='text' id='totalEpisodes'/>
+</form></p>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
  <script>
    document.onload = function() {
      axios.get("http://localhost:7777/api/series")
@@ -38,7 +122,7 @@
         axios.get("http://localhost:7777/api/recommended")
             .then(function (response) {
               const data = response.data;
-              alert(`Here is your movie suggestion: ${data}`);
+              alert(`Here is your series suggestion: ${data}`);
             })}</script>
   <script src="main.js"></script>
 </body>

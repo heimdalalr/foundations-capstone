@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get(`/api/recommended`, (req, res) => {
-  const recommendations = ["Show 1", "Show 2", "Show 3", "Show 4", "Show 5"];
+  const recommendations = ["Lost in Space", "Jojo's Bizarre adventure", "Hellbound", "Arcane", "The Witcher"];
 
   //choose random friend req
   let randomIndex = Math.floor(Math.random() * recommendations.length);

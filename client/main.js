@@ -46,7 +46,7 @@ function displaySeries(arr) {
     seriesContainer.innerHTML = ``
     for (let i=0; i<arr.length; i++) {
         let series = arr[i]
-        const seriesCard = document.createElement('div')
+        const seriesCard = document.createElement('span')
         seriesCard.classList.add('series-card')
         console.log(series)
         seriesCard.innerHTML = `(${series.id}) Title: ${series.seriesTitle} - Season: ${series.season} - Episode ${series.currentEpisode} of ${series.totalEpisodes}`
